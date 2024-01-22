@@ -1,0 +1,38 @@
+.custom-form .form-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    max-width: 70%;
+    border: 1px solid #dddddd;
+
+}
+
+.custom-form .form-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.custom-form .form-table th,
+.custom-form .form-table td {
+    padding: 12px 15px;
+}
+
+.custom-form .form-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.custom-form .form-table tbody tr  td textarea {
+    max-width: 80%;
+}
+
+.custom-form .form-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.custom-form .form-table tbody tr td:nth-of-type(1) img {
+    max-height: 300px;
+    max-width: 300px;
+}

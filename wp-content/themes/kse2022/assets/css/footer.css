@@ -1,0 +1,137 @@
+
+.wp-container-1>.alignleft {
+    float: left;
+    margin-inline-start: 0;
+    margin-inline-end: 2em;
+}
+
+.wp-container-1>.alignright {
+    float: right;
+    margin-inline-start: 2em;
+    margin-inline-end: 0;
+}
+
+.wp-container-1>.aligncenter {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+.wp-container-2>.alignleft {
+    float: left;
+    margin-inline-start: 0;
+    margin-inline-end: 2em;
+}
+
+.wp-container-2>.alignright {
+    float: right;
+    margin-inline-start: 2em;
+    margin-inline-end: 0;
+}
+
+.wp-container-2>.aligncenter {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+.wp-container-3>.alignleft {
+    float: left;
+    margin-inline-start: 0;
+    margin-inline-end: 2em;
+}
+
+.wp-container-3>.alignright {
+    float: right;
+    margin-inline-start: 2em;
+    margin-inline-end: 0;
+}
+
+.wp-container-3>.aligncenter {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+.wp-container-4 {
+    display: flex;
+    gap: 2em;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.wp-container-4>* {
+    margin: 0;
+}
+
+
+.wp-container-5>.alignleft {
+    float: left;
+    margin-inline-start: 0;
+    margin-inline-end: 2em;
+}
+
+.wp-container-5>.alignright {
+    float: right;
+    margin-inline-start: 2em;
+    margin-inline-end: 0;
+}
+
+.wp-container-5>.aligncenter {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+.wp-container-6>.alignleft {
+    float: left;
+    margin-inline-start: 0;
+    margin-inline-end: 2em;
+}
+
+.wp-container-6>.alignright {
+    float: right;
+    margin-inline-start: 2em;
+    margin-inline-end: 0;
+}
+
+.wp-container-6>.aligncenter {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+.wp-container-7>.alignleft {
+    float: left;
+    margin-inline-start: 0;
+    margin-inline-end: 2em;
+}
+
+.wp-container-7>.alignright {
+    float: right;
+    margin-inline-start: 2em;
+    margin-inline-end: 0;
+}
+
+.wp-container-7>.aligncenter {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+.wp-container-8>.alignleft {
+    float: left;
+    margin-inline-start: 0;
+    margin-inline-end: 2em;
+}
+
+.wp-container-8>.alignright {
+    float: right;
+    margin-inline-start: 2em;
+    margin-inline-end: 0;
+}
+
+.wp-container-8>.aligncenter {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}

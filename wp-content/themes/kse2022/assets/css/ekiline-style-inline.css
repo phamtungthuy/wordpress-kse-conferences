@@ -1,0 +1,133 @@
+#custom_header_module .wp-block-cover,
+        #custom_header_module .wp-block-cover.has-background-dim::before {
+            background-color: #000000;
+            min-height: 40vh;
+        }
+
+        #custom_header_module .headline {
+            color: #FFFFFF;
+        }
+
+        #custom_header_module .headline a {
+            color: #FFFFFF;
+        }
+
+        @media only screen and (min-width:960px) {
+            #custom_header_module .wp-block-cover {
+                background-image: url("http://kse-conferences.org/wp-content/themes/kse2022/images/duong-tran-phu-Nha-Trang-ve-dem-768x511.jpg") !important;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
+        .lead small {
+            display: none !important
+        }
+
+        #maincolumns {
+            margin-top: 40px !important;
+            margin-bottom: 20px !important
+        }
+
+        #block-2 {
+            margin-bottom: 20px
+        }
+
+        article .entry-title {
+            display: none;
+        }
+
+        .menu-kse-2022-container {
+            background: #f5f5f5;
+            padding: 30px;
+            padding-bottom: 10px;
+            font-weight: 500;
+            border-bottom: 5px solid #e7e7e7;
+        }
+
+        .menu-kse-2022-container ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .menu-kse-2022-container ul li {
+            padding: 5px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu-kse-2022-container ul li a {
+            color: black;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .menu-kse-2022-container ul li a:hover,
+        a:focus {
+            color: #74A941;
+        }
+
+        @media screen and (max-width: 992px) {
+
+            .bg-deep,
+            .wp-block-cover.bg-deep {
+                animation: none;
+                background-position: center;
+                 background-repeat: no-repeat;
+                background-size: 200%;
+            }
+        }
+
+        .headline.container .title {}
+
+        @media screen and (min-width: 1200px) {
+            .headline.container .display-3 {
+                font-size: 3rem !important;
+            }
+        }
+
+        .navbar-brand .site-title,
+        .navbar-text {
+            display: none !important;
+        }
+
+        .widget_block {
+            margin-bottom: 20px;
+        }
+
+        .sponsor-item {
+            margin-top: 10px
+        }
+
+        .sponsor-item h3 {
+            font-size: 1.1rem;
+        }
+
+        .sponsor-item.default:nth-child(2)::before {
+            content: "Organizers";
+            display: block;
+            margin-top: 0px;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            line-height: 1.2;
+            font-size: calc(1.325rem + .9vw);
+            transform: translate(-28px, 10px);
+        }
+
+        .sponsor-item.default:nth-child(4)::before {
+            content: "Endorsed by";
+            display: block;
+            margin-top: 0px;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            line-height: 1.2;
+            font-size: calc(1.325rem + .9vw);
+            transform: translate(-28px, 10px);
+        }
+
+        #primary h4,
+        h5 {
+            margin-top: 30px;
+        }

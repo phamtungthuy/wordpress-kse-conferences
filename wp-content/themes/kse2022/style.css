@@ -1,0 +1,498 @@
+/*
+ Theme Name: kse2022
+ Theme URI: http://www.ekiline.com/
+ Author: Uri Lazcano (Urielink)
+ Author URI: https://profiles.wordpress.org/urielink/
+ Description: Developed with Bootstrap 5 and HTML5. Multiple widget areas and widgets to facilitate website creation. Includes optimization (SEO) functions. Documentation: http://www.ekiline.com
+ Version: 2.2.8
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain: ekiline
+ Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, theme-options, translation-ready, blog, e-commerce, portfolio
+ Requires at least: 5.0
+ Tested up to: 5.9
+ Requires PHP: 7.0
+
+ Ekiline for WordPress Theme, Copyright 2018 Uri Lazcano
+ Ekiline like WordPress, is licensed under the GPL.
+
+ This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License along with this program.
+ Ekiline for WordPress Theme is distributed under the terms of the GNU GPL
+
+ Ekiline for WordPress Theme bundles the following third-party resources:
+ Bootstrap v5.1.3 (https://getbootstrap.com/), copyright 2011-2021 The Bootstrap Authors & Twitter, Inc.
+ Bootstrap are licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE).
+ Source: https://getbootstrap.com/.
+ */
+
+/**
+ * Ekiline directorio de estilos:
+ * 1) Wordpress: Core, Gutenberg, Widgets y Plugins.
+ * 2) Ekiline: Personalizaciones, y extensiones.
+ * 3) Above the fold.
+ */
+/* ------------------------------------------------
+ * 1) WordPress: escencial || core items
+ * ----------------------------------------------*/
+ embed,iframe,object{max-width:100%;margin:0 auto;position:relative;display:block;}
+ .alignnone{margin:5px 20px 20px 0;}
+ .aligncenter,div.aligncenter{display:block;margin:5px auto 5px auto;}
+ .alignright{float:right;margin:5px 0 20px 20px;}
+ .alignleft{float:left;margin:5px 20px 20px 0;}
+ a img.alignright{float:right;margin:5px 0 20px 20px;}
+ a img.alignnone{margin:5px 20px 20px 0;}
+ a img.alignleft{float:left;margin:5px 20px 20px 0;}
+ a img.aligncenter{display:block;margin-left:auto;margin-right:auto;}
+ .gallery-caption{display:block;}
+ .wp-caption{background:#fff;border:1px solid #f0f0f0;max-width:96%;padding:5px 3px 10px;text-align:center;}
+ .wp-caption.alignnone{margin:5px 20px 20px 0;}
+ .wp-caption.alignleft{margin:5px 20px 20px 0;}
+ .wp-caption.alignright{margin:5px 0 20px 20px;}
+ .wp-caption img{border:0 none;height:auto;margin:0;max-width:98.5%;padding:0;width:auto;}
+ .wp-caption p.wp-caption-text{font-size:11px;line-height:17px;margin:0;padding:0 4px 5px;}
+ .wp-video{margin:0 auto;}
+ .wp-video .mejs-container,[class*="wp-image"]{max-width:100%;height:auto;margin:inherit;}
+ .screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;}
+ .screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;color:#21759b;display:block;font-size:14px;font-size:0.875rem;font-weight:bold;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000;}
+ .sticky{display:block;}
+ .bypostauthor{display:block;}
+ #user_switching_switch_on{position:fixed;left:0;padding:0.4rem;margin:0px;bottom:0px;z-index:3000;background-color:#343A40;font-size:0.8rem;}
+ .widget_nav_menu .current-menu-item{border:1px dotted #21759b;}
+
+ /* ------------------------------------------------
+  * 1.1) Gutenberg, Block editor frontend:
+  * ----------------------------------------------*/
+ .wp-block-image img{max-width:100%;height:auto;}
+ .wp-block-media-text__media img,.wp-block-media-text__media video{height:auto;}
+ /* alineacion amplia || wide alignments */
+ .container > .hentry .alignwide{ margin-left:-10%; margin-right:-10%; width:120%;}
+ .container > .hentry .alignfull{margin-left:calc((100%/2) - (99vw/2));margin-right:calc((100%/2) - (99vw/2));width: 99vw;}
+ .container > .hentry .wp-block-image.alignfull,.container > .hentry .wp-block-image.alignwide{max-width: 100vw;text-align: center;}
+ .hentry .alignfull iframe,.hentry .alignwide iframe{width: 100%;height: calc(100vw / 3);min-height: 400px;}
+ .hentry .alignfull video,.hentry .alignwide video{width: 100%;min-height: 400px;}
+ /* Coincidencias con bootstrap || Bootstrap coincidences */
+ .has-display-1-font-size, .has-display-2-font-size, .has-display-3-font-size, .has-display-4-font-size {font-weight: 300;line-height: 1.2;}
+ .has-display-1-font-size {font-size: 6rem;}
+ .has-display-2-font-size {font-size: 5.5rem;}
+ .has-display-3-font-size {font-size: 4.5rem;}
+ .has-display-4-font-size {font-size: 3.5rem;}
+ .wp-block-code.has-text-color > code{color: inherit;}
+
+ /* ------------------------------------------------
+  * 1.2) WIDGETS
+  * ----------------------------------------------*/
+ /* Widget de galeria */
+ .gallery[class*="gallery-columns"]:not([class*="gallery-columns-1"]){display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-right: -15px;margin-left: -15px;}
+ .gallery[class*="gallery-columns"] .gallery-item {-ms-flex-preferred-size: 0;flex-basis: 0;-ms-flex-positive: 1;flex-grow: 1;max-width: 100%;text-align: center;}
+
+ /* ------------------------------------------------
+  * 1.3) PLUGINS
+  * ----------------------------------------------*/
+/* JetPack */
+.infinite-scroll #page-navigation{clip:rect(1px,1px,1px,1px);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden;}
+.infinite-scroll #infinite-handle{text-align: center;margin: 1rem auto; width: 100%;}
+.infinite-scroll #infinite-handle span button{font-size:1rem;}
+/*WooCommerce Checkout*/
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1{max-width: inherit;}
+.woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2{max-width: inherit;}
+.woocommerce form .form-row label, .woocommerce-page form .form-row label,.woocommerce-input-wrapper{width: 100%;}
+/*WooCommerce Shop grid*/
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{max-width: 100%;}
+
+ /* ------------------------------------------------
+  * 1.4) Ekiline THEME OPTIONS:
+  * ----------------------------------------------*/
+/* Custom header */
+.bg-deep,.wp-block-cover.bg-deep div{background-size:1px;background-repeat:no-repeat;-webkit-transition:all 0.4s ease-in-out;-moz-transition:all 0.4s ease-in-out;-ms-transition:all 0.4s ease-out;-o-transition:all 0.4s ease-in-out;transition:all 0.4s ease-in-out;}
+#custom_header_module .wp-block-cover,#custom_header_module .wp-block-cover.has-background-dim::before{display:flex;align-items:flex-end;}
+#custom_header_module > .alignfull{margin-left:calc(-101vw / 2 + 100% / 2);margin-right:calc(-101vw / 2 + 100% / 2);width:100vw;}
+#custom_header_module .wp-block-cover.has-background-dim::before{z-index:1;opacity:0 !important;}
+#custom_header_module .wp-block-cover .headline{z-index:1;}
+#custom_header_module h1{line-height:0.88;}
+@media only screen and (max-width:576px){
+  #custom_header_module > .alignfull{margin-left:calc(-100vw / 2 + 100% / 2);margin-right:calc(-100vw / 2 + 100% / 2);}
+}
+@keyframes bgresize{
+  0%{background-size:150%;}
+  100%{background-size:130%;}
+}
+.bg-deep,.wp-block-cover.bg-deep{animation:bgresize 5s ease;background-position:50% 50%;background-repeat:no-repeat;background-size:130%;}
+@media only screen and (max-width:960px),(aspect-ratio:1/1),(orientation:portrait){
+  @keyframes bgresize{
+    0%{background-size:200vh;}
+    100%{background-size:180vh;}
+  }
+  .bg-deep,.wp-block-cover.bg-deep{background-size:180vh;}
+}
+/* Navbar options, combine rules with header */
+body.has-navbar-static-top, body.has-navbar-fixed-top.has-custom-header-full-view, body.has-navbar-fixed-top-sticky.has-custom-header-full-view{margin-top:initial;}
+body.has-navbar-fixed-top, body.has-navbar-fixed-top-sticky{margin-top:50px;}
+body.has-navbar-fixed-bottom{margin-bottom:50px;}
+
+/* ------------------------------------------------
+  * 2) Ekiline: CUSTOM STYLES tus estilos || write here your styles
+  * ----------------------------------------------*/
+ main{word-wrap: break-word;overflow-wrap: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;-ms-hyphens: auto;hyphens: auto;}
+ /* Clearfix en articulos */
+ article::after{content: "";clear: both;display: table;}
+ article footer, article .page-links{clear: both;}
+ /* Intermitencia */
+.blink{ animation: doBlink 2s linear infinite; }
+@keyframes doBlink {
+  50% { opacity: 0; }
+}
+/*Update: Custom-logo*/
+.custom-header .custom-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+  /**
+  * Iconos de redes sociales ocupa dashicons.
+  * opt1: nombrar menu como "Social"
+  * opt2: agregar clases por enlace con opcion "menu-social icon-only"
+  */
+ [class*="menu-social"] a{text-decoration: none;}
+ [class*="menu-social"] a:before{font-family:'dashicons';display:inline-block;line-height:1;font-weight:400;font-style:normal;text-decoration:inherit;text-transform:none;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;width:20px;height:20px;font-size:20px;vertical-align:top;text-align:center;transition:color .1s ease-in;}
+ .icon-only a{font-size:0px;}
+ [class*="menu-social"] a[href*="twitter"]:before {content:"\f301";}
+ [class*="menu-social"] a[href*="facebook"]:before {content:"\f304";}
+ [class*="menu-social"] a[href*="google"]:before{content:"\f18b";}
+ [class*="menu-social"] a[href*="instagram"]:before{content:"\f12d";}
+ [class*="menu-social"] a[href*="linkedin"]:before{content:"\f18d";}
+ [class*="menu-social"] a[href*="pinterest"]:before{content:"\f192";}
+ [class*="menu-social"] a[href*="reddit"]:before{content:"\f195";}
+ [class*="menu-social"] a[href*="spotify"]:before{content:"\f196";}
+ [class*="menu-social"] a[href*="twitch"]:before{content:"\f199";}
+ [class*="menu-social"] a[href*="whatsapp"]:before{content:"\f19a";}
+ [class*="menu-social"] a[href*="youtube"]:before{content:"\f19b";}
+ [class*="menu-social"] a[href*="wordpress"]:before{content:"\f120";}
+ [class*="menu-social"] a[href*="amazon"]:before{content:"\f162";}
+ [class*="menu-social"] a[href*="twitter"]{color:#1da1f2 !important;}
+ [class*="menu-social"] a[href*="facebook"]{color:#1877f2 !important;}
+ [class*="menu-social"] a[href*="google"]{color:#4285f4 !important;}
+ [class*="menu-social"] a[href*="instagram"]{color:#c32aa3 !important;}
+ [class*="menu-social"] a[href*="linkedin"]{color:#0a66c2 !important;}
+ [class*="menu-social"] a[href*="pinterest"]{color:#bd081c !important;}
+ [class*="menu-social"] a[href*="reddit"]{color:#ff4500 !important;}
+ [class*="menu-social"] a[href*="spotify"]{color:#1ed760 !important;}
+ [class*="menu-social"] a[href*="twitch"]{color:#9146ff !important;}
+ [class*="menu-social"] a[href*="whatsapp"]{color:#25d366 !important;}
+ [class*="menu-social"] a[href*="youtube"]{color:#ff0000 !important;}
+ [class*="menu-social"] a[href*="wordpress"]{color:#0073aa !important;}
+ [class*="menu-social"] a[href*="amazon"]{color:#ff9900 !important;}
+
+/* ------------------------------------------------------------------------------------------------
+ * 2.1) Ekiline Extend B4 Navigation
+ * Estilos que amplian el uso de Bootstrap.
+ * ----------------------------------------------------------------------------------------------*/
+
+/* Animaciones || Animations */
+.navbar, .navbar .navbar-brand, .navbar-nav li a, a:hover, .btn:hover, .icon-bar{-webkit-transition:all 0.4s ease-in-out;-moz-transition:all 0.4s ease-in-out;-ms-transition:all 0.4s ease-out;-o-transition:all 0.4s ease-in-out;transition:all 0.4s ease-in-out;}
+
+/* Animacion de toggle btn en menu || Toggle navbar btn animation */
+.navbar-toggler .icon-bar{background-color:#888;display:block;width:22px;height:2px;border-radius:1px;margin:4px 0px;}
+.navbar-toggler .icon-bar:nth-child(1){-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);position:relative;top:6px;}
+.navbar-toggler .icon-bar:nth-child(2){width:0%;opacity:0;}
+.navbar-toggler .icon-bar:nth-child(3){-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);position:relative;top:-6px;}
+.navbar-toggler.collapsed .icon-bar:nth-child(1){-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);position:relative;top:0px;}
+.navbar-toggler.collapsed .icon-bar:nth-child(2){width:22px;opacity:1;}
+.navbar-toggler.collapsed .icon-bar:nth-child(3){-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);position:relative;top:0px;}
+
+/* Enlace descripcion || Nav link description */
+.link-description {display: inline-block;text-transform: initial;white-space: normal;}
+
+/* Enlaces con submenu || Submenu links */
+.navbar .dropdown a,.navbar .dropright a, .navbar .dropup a{display:inline-block;width: auto;}
+.navbar a.dropdown-toggle-split{float: right;}
+  .navbar .scroll-menu.show .dropup a.dropdown-toggle-split,
+  .modal .navbar a.dropdown-toggle-split{position: absolute;right: 0;}
+    .navbar .dropright .dropdown-menu {margin-left: .25rem;}
+
+/* Flecha en submenu ajustes || Subnav arrow position */
+  .modal .navbar .dropright a.dropdown-toggle-split::after,
+  .modal .navbar .dropup a.dropdown-toggle-split::after,
+  .navbar .order-first .dropright a.dropdown-toggle-split::after,
+  .navbar .mega-menu.show.dropdown .sub-menu .dropdown-toggle::after,
+  .navbar .scroll-menu.show .dropup .dropdown-toggle::after,
+  .navbar .off-canvas-nav.show .dropup a.dropdown-toggle-split::after{border-top: .3em solid;border-right: .3em solid transparent;border-bottom: 0;border-left: .3em solid transparent;}
+  @media only screen and (max-width : 768px) {
+    .navbar .dropright a.dropdown-toggle-split::after {border-top: .3em solid;border-right: .3em solid transparent;border-bottom: 0;border-left: .3em solid transparent;}
+  }
+
+/* Ajustes de submenu anidado(probable agregar) {position:static;float:none;} */
+.navbar-nav .dropdown-menu .dropdown-menu{border-left:0px;border-radius:0px;border-right:0px;}
+  .navbar-nav .dropup .dropdown-menu .dropdown-menu{position: static;}
+
+/* Sticky navbar */
+.navbar-sticky.scrolled-down{ transform:translateY(-100%); transition: all 0.3s ease-in-out; }
+.navbar-sticky.scrolled-up{ transform:translateY(0); transition: all 0.3s ease-in-out; }
+ /* Modal + Sticky navbar */
+ .modal-open .navbar-sticky{z-index: 1100;}
+ .modal-open .navbar-sticky.scrolled-down, .modal-open .navbar-sticky.scrolled-up{transform: none;top: -100px;}
+
+/* Estilos de navegaciĂ³n que solo necesitan ejecutarse en desktop */
+@media only screen and (min-width : 768px) {
+ /*Links con dropdown, dropup */
+ .navbar-nav > .dropdown, .navbar-nav > .dropup{display: flex;}
+ .navbar-collapse.show .navbar-nav > .dropdown, .navbar-collapse.show .navbar-nav > .dropup{display: block;}
+ /*scroll-menu*/
+ .navbar-collapse:not(.order-first) .scroll-menu.dropdown.show, .navbar-collapse:not(.order-first) .scroll-menu.dropup.show{position: inherit;}
+ .navbar-collapse:not(.order-first) .scroll-menu.show > .dropdown-menu{max-width: 100%;left: 0;right: 0;margin: 0 auto;border-radius: 0px;display:flex;overflow-x: scroll;}
+ .navbar-collapse:not(.order-first) .scroll-menu.dropdown.show .dropdown,.navbar-collapse:not(.order-first) .scroll-menu.dropdown.show .dropright{display: flex;}
+ .navbar-collapse:not(.order-first) .scroll-menu.dropdown .dropdown .dropdown-menu,.navbar-collapse:not(.order-first) .scroll-menu.dropdown .dropright .dropdown-menu{position: static;padding: 0px;display: flex;}
+ /*en caso de modal D: */
+   .modal .navbar-collapse .scroll-menu.show .dropdown-menu{display: block;overflow: auto;flex-direction: column;}
+   .modal .navbar-collapse .scroll-menu.dropdown.show .dropdown,.modal .navbar-collapse .scroll-menu.dropdown.show .dropright{display: block;}
+ /*mega-menu*/
+ .navbar-collapse:not(.order-first) .mega-menu a {display: block;}
+ .navbar-collapse:not(.order-first) .mega-menu .dropdown-toggle-split{background-color: initial !important;}
+ .navbar-collapse:not(.order-first) .mega-menu.dropdown, .navbar-collapse:not(.order-first) .mega-menu.dropup{position: inherit;}
+ .navbar-collapse:not(.order-first) .mega-menu > .dropdown-menu.show{max-width: 1120px;left: 0;right: 0;margin: 0 auto;border-radius: 0px;display:flex;flex-wrap: wrap;}
+ .navbar-collapse:not(.order-first) .mega-menu > .dropdown-menu.show > li {width: 20%;}
+ .navbar-collapse:not(.order-first) .mega-menu > .dropdown-menu.show > li ul.dropdown-menu {display: block;position: static;border-bottom:none;margin: 0px;padding: 0px;}
+ .navbar-collapse:not(.order-first) .mega-menu > .dropdown-menu.show > .menu-item > a.dropdown-item:first-child{text-transform: uppercase;font-size: .875rem;white-space: normal;}
+ .navbar-collapse:not(.order-first) .mega-menu .dropdown-menu.show .dropdown-toggle-split {position: absolute;top: 0px;right: 0;cursor: pointer;}
+ /*en caso de modal D: */
+ .modal .navbar-collapse:not(.order-first) .mega-menu a { display: inline-block; }
+ .modal .navbar-collapse:not(.order-first) .mega-menu > .dropdown-menu.show > li {width: 100%;}
+ /*off-canvas-nav nav*/
+ .navbar-collapse.off-canvas-nav{ background-color: transparent !important; }
+}
+
+/* ------------------------------------------------------------------------------------------------
+ * 2.2) Ekiline Extend B4 Carousel
+ * ----------------------------------------------------------------------------------------------*/
+
+/* Carousel base */
+.carousel,.carousel-item{min-height:200px;}
+.carousel .carousel-item{overflow:hidden;}
+.no-thumb .carousel-caption{position:relative;left:0;right:0;bottom:0px;z-index: initial;}
+/* Carousel multiple */
+.carousel-multiple {height: inherit;}
+.carousel-multiple .carousel-item {height: inherit;}
+/* Efectos para carrusel: fade y vertical || Carousel effects: fade and vertical */
+.carousel-fade .carousel-item {opacity:0;transition-duration:.6s;transition-property:opacity;}
+.carousel-fade .carousel-item.active,.carousel-fade .carousel-item-next.carousel-item-start,.carousel-fade .carousel-item-prev.carousel-item-end {opacity:1;}
+.carousel-fade .active.carousel-item-start,.carousel-fade .active.carousel-item-end {opacity:0;}
+.carousel-fade .carousel-item-next,.carousel-fade .carousel-item-prev,.carousel-fade .carousel-item.active,.carousel-fade .active.carousel-item-start,.carousel-fade .active.carousel-item-prev {transform: translateX(0);transform: translate3d(0, 0, 0);}
+/* Vertical FX */
+.carousel-vertical .carousel-inner{height:100%}
+.carousel-vertical .carousel-inner > .carousel-item{-webkit-transition:.6s ease-in-out top;-o-transition:.6s ease-in-out top;transition:.6s ease-in-out top}
+@media all and (transform-3d),(-webkit-transform-3d) {
+ .carousel-vertical .carousel-inner > .carousel-item{-webkit-transition:-webkit-transform .6s ease-in-out;-o-transition:-o-transform .6s ease-in-out;transition:transform .6s ease-in-out;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-perspective:1000;perspective:1000px}
+ .carousel-vertical .carousel-inner > .carousel-item.carousel-item-next,.carousel-vertical .carousel-inner > .carousel-item.active.carousel-item-end{top:0;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}
+ .carousel-vertical .carousel-inner > .carousel-item.carousel-item-prev,.carousel-vertical .carousel-inner > .carousel-item.active.carousel-item-start{top:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}
+ .carousel-vertical .carousel-inner > .carousel-item.carousel-item-next.carousel-item-start,.carousel-vertical .carousel-inner > .carousel-item.carousel-item-prev.carousel-item-end,.carousel-vertical .carousel-inner > .carousel-item.active{top:0;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+}
+.carousel-vertical .carousel-inner > .carousel-item-next,.carousel-vertical .carousel-inner > .carousel-item-prev{top:0;height:100%}
+.carousel-vertical .carousel-inner > .active,.carousel-vertical .carousel-inner > .carousel-item-next.carousel-item-start,.carousel-vertical .carousel-inner > .carousel-item-prev.carousel-item-end{top:0}
+.carousel-vertical .carousel-inner > .carousel-item-prev,.carousel-vertical .carousel-inner > .active.carousel-item-start{left:0;top:-100%}
+.carousel-vertical .carousel-inner > .carousel-item-next,.carousel-vertical .carousel-inner > .active.carousel-item-end{left:0;top:100%}
+/* Carousel con minuaturas, multiples. || Thumbnails in crausel multiples*/
+.carousel-thumbs{height:auto;}
+.carousel-thumbs .thumbnails.list{margin:0px;}
+.carousel-thumbs .carousel-item{height:auto;background-color:transparent;}
+.carousel-thumbs .carousel-inner > .carousel-item{background-color:transparent;}
+.carousel-thumbs .carousel-control-prev{left:0;}
+.carousel-thumbs .carousel-control-next{right:0;}
+/* Regla general: posiciĂ³n de objetos || Rule: object position */
+.carousel-multiple .carousel-inner .active.carousel-item-start,.carousel-multiple .carousel-inner .active.carousel-item-end{left:0%;-webkit-transition:all .6s ease 0s;-moz-transition:all .6s ease 0s;-o-transition:all .6s ease 0s;-ms-transition:all .6s ease 0s;transition:all .6s ease 0s;}
+.carousel-multiple .carousel-caption {z-index: 0;}
+.carousel-multiple .carousel-inner .carousel-item > *{float:left;min-height:200px;position:relative;}
+/* variable por 2 thumbs (col-sm-6) ||Â 2 thumbs */
+.carousel-multiple.x2 .carousel-inner .active.carousel-item-start{-webkit-transform:translate3d(-50%,0,0);-moz-transform:translate3d(-50%,0,0);-ms-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0);}
+.carousel-multiple.x2 .carousel-inner .active.carousel-item-end{-webkit-transform:translate3d(50%,0,0);-moz-transform:translate3d(50%,0,0);-ms-transform:translate3d(50%,0,0);transform:translate3d(50%,0,0);}
+.carousel-multiple.x2 .carousel-inner .carousel-item-prev{left:-50%;}
+.carousel-multiple.x2 .carousel-inner .carousel-item-next{left:50%;}
+/* variable por 3 thumbs (col-sm-4) ||Â 3 thumbs */
+.carousel-multiple.x3 .carousel-inner .active.carousel-item-start{-webkit-transform:translate3d(-33.33333333%,0,0);-moz-transform:translate3d(-33.33333333%,0,0);-ms-transform:translate3d(-33.33333333%,0,0);transform:translate3d(-33.33333333%,0,0);}
+.carousel-multiple.x3 .carousel-inner .active.carousel-item-end{-webkit-transform:translate3d(33.33333333%,0,0);-moz-transform:translate3d(33.33333333%,0,0);-ms-transform:translate3d(33.33333333%,0,0);transform:translate3d(33.33333333%,0,0);}
+.carousel-multiple.x3 .carousel-inner .carousel-item-prev{left:-33.33333333%;}
+.carousel-multiple.x3 .carousel-inner .carousel-item-next{left:33.33333333%;}
+/* variable por 4 thumbs (col-sm-3) ||Â 4 thumbs */
+.carousel-multiple.x4 .carousel-inner .active.carousel-item-start{-webkit-transform:translate3d(-25%,0,0);-moz-transform:translate3d(-25%,0,0);-ms-transform:translate3d(-25%,0,0);transform:translate3d(-25%,0,0);}
+.carousel-multiple.x4 .carousel-inner .active.carousel-item-end{-webkit-transform:translate3d(25%,0,0);-moz-transform:translate3d(25%,0,0);-ms-transform:translate3d(25%,0,0);transform:translate3d(25%,0,0);}
+.carousel-multiple.x4 .carousel-inner .carousel-item-prev{left:-25%;}
+.carousel-multiple.x4 .carousel-inner .carousel-item-next{left:25%;}
+/* variable por 6 thumbs (col-sm-2) ||Â 6 thumbs */
+.carousel-multiple.x6 .carousel-inner .active.carousel-item-start{-webkit-transform:translate3d(-16.66666667%,0,0);-moz-transform:translate3d(-16.66666667%,0,0);-ms-transform:translate3d(-16.66666667%,0,0);transform:translate3d(-16.66666667%,0,0);}
+.carousel-multiple.x6 .carousel-inner .active.carousel-item-end{-webkit-transform:translate3d(16.66666667%,0,0);-moz-transform:translate3d(16.66666667%,0,0);-ms-transform:translate3d(16.66666667%,0,0);transform:translate3d(16.66666667%,0,0);}
+.carousel-multiple.x6 .carousel-inner .carousel-item-prev{left:-16.66666667%;}
+.carousel-multiple.x6 .carousel-inner .carousel-item-next{left:16.66666667%;}
+/* Regla general: posiciĂ³n de objetos, despuĂ©s del clic || Objects after clic */
+.carousel-multiple .carousel-inner .carousel-item-next.carousel-item-start{left:0%;}
+.carousel-multiple .carousel-inner .carousel-item-prev.carousel-item-end{left:0%;}
+.carousel-multiple .carousel-inner .carousel-item-next.carousel-item-start > *{opacity:0;}
+.carousel-multiple .carousel-inner .carousel-item-next.carousel-item-start >*:last-child{opacity:1;}
+.carousel-multiple .carousel-inner .carousel-item-prev.carousel-item-end >*{opacity:0;}
+.carousel-multiple .carousel-inner .carousel-item-prev.carousel-item-end >*:first-child{opacity:1;}
+/* PersonalizaciĂ³n de controles de carrusel ||Â Carousel controls */
+.carousel-control-prev-icon,.carousel-control-next-icon{background-size:15px;}
+/* Columnas auxiliares (intermedias) || Intermediate columns */
+.col-lg-1a5,.col-sm-1a5,.col-xs-1a5,.col-lg-1a7,.col-sm-1a7,.col-xs-1a7,
+.col-lg-1a8,.col-sm-1a8,.col-xs-1a8,.col-lg-1a9,.col-sm-1a9,.col-xs-1a9{position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;}
+.col-lg-1a5,.col-sm-1a5,.col-xs-1a5{width:20%;width:20%;}
+.col-lg-1a7,.col-sm-1a7,.col-xs-1a7{width:14.285714285714285714285714285714%;width:14.285714285714285714285714285714%;}
+.col-lg-1a8,.col-sm-1a8,.col-xs-1a8{width:12.5%;width:12.5%;}
+.col-lg-1a9,.col-sm-1a9,.col-xs-1a9{width:11.1111111%;width:11.1111111%;}
+
+/* ------------------------------------------------------------------------------------------------
+ * 2.3) Ekiline Extend B4 Modulo: Modal || Modals
+ * ----------------------------------------------------------------------------------------------*/
+
+/* Effectos ||Â Effects: zoom, newspaper, move-horizontal, move-from-bottom, unfold-3d, zoom-out */
+.modal.zoom .modal-dialog{-webkit-transition:all 0.5s ease-in-out;-o-transition:all 0.5s ease-in-out;transition:all 0.5s ease-in-out;transform:scale(0.6);}
+.modal.zoom.show .modal-dialog{-webkit-transition:all 0.4s ease-in-out;-o-transition:all 0.4s ease-in-out;transition:all 0.4s ease-in-out;transform:scale(1);}
+.modal.newspaper .modal-dialog{-webkit-transition:all 0.5s ease-in-out;transition:all 0.5s;transform:scale(0) rotate(500deg);}
+.modal.newspaper.show .modal-dialog{transform:scale(1) rotate(0deg);}
+.modal.move-horizontal .modal-dialog{transition:all 0.5s;transform:translateX(-50px);}
+.modal.move-horizontal.show .modal-dialog{transform:translateX(0);}
+.modal.move-from-bottom .modal-dialog{transition:all 0.5s;transform:translateY(100%);}
+.modal.move-from-bottom.show .modal-dialog{transform:translateY(0);}
+.modal.unfold-3d .modal-dialog{transition:all 0.5s ease-in-out;transform-style:preserve-3d;transform:rotateY(-60deg);}
+.modal.unfold-3d.show .modal-dialog{transform:rotateY(0deg);}
+.modal.zoom-out .modal-dialog{transition:all 0.5s;transform:scale(1.3);}
+.modal.zoom-out.show .modal-dialog{transform:scale(1);}
+/* Modal lateral: agregar "left" or "right" en modal parent div, after class="modal" || Add left or right class in parent div.modal */
+.modal.left-aside .modal-dialog,.modal.right-aside .modal-dialog{position:fixed;margin:auto;height:100%;-webkit-transform:translate3d(0%,0,0);-ms-transform:translate3d(0%,0,0);-o-transform:translate3d(0%,0,0);transform:translate3d(0%,0,0);}
+.modal.left-aside .modal-content,
+.modal.right-aside .modal-content{height:100%;overflow-y:auto;}
+.modal.left-aside .modal-body,
+.modal.right-aside .modal-body{padding:15px 15px 80px;}
+.modal.left-aside.fade .modal-dialog{left:-320px;-webkit-transition:opacity 0.3s linear,left 0.3s ease-out;-moz-transition:opacity 0.3s linear,left 0.3s ease-out;-o-transition:opacity 0.3s linear,left 0.3s ease-out;transition:opacity 0.3s linear,left 0.3s ease-out;transform: translate(0,0px);}
+.modal.left-aside.fade.show .modal-dialog{left:0;}
+.modal.right-aside.fade .modal-dialog{right:-320px;-webkit-transition:opacity 0.3s linear,right 0.3s ease-out;-moz-transition:opacity 0.3s linear,right 0.3s ease-out;-o-transition:opacity 0.3s linear,right 0.3s ease-out;transition:opacity 0.3s linear,right 0.3s ease-out;transform: translate(0,0px);}
+.modal.right-aside.fade.show .modal-dialog{right:0;}
+/** Modal inferior **/
+.modal.move-from-bottom .modal-dialog{position:fixed;left:0;right:0;bottom:0;margin:0px auto;height:60%;transform: translate(0,50px) !important;}
+.modal.move-from-bottom.fade.show .modal-dialog{transform: translate(0,0px) !important;}
+.modal.move-from-bottom .modal-content{height:100%;overflow-y:auto;}
+  /*Full modal*/
+  .modal,.modal-dialog,.modal-content,.modal-body{-webkit-transition:all .6s ease-in-out !important;-moz-transition:all .6s ease-in-out !important;-ms-transition:all .6s ease-out !important;-o-transition:all .6s ease-in-out !important;transition:all .6s ease-in-out !important;}
+  .modal-full .modal-dialog{width:100%;max-width:100%;margin:0px auto;}
+  .modal-full .modal,.modal-full .modal .modal-dialog,.modal-full .modal .modal-content,.modal-full .modal .modal-body{height:100%;}
+  .modal-full .modal-backdrop{opacity:.9;}
+  /*full modal header y footer*/
+  .modal-full .modal-header,.modal-full .modal-footer{position:absolute;z-index:1000;border:none;}
+  .modal-full .modal-header{top:0;left:0;right:0;}
+  .modal-full .modal-footer{bottom:0;right:0;padding:0px;}
+  /*full modal especĂ­ficos,inline,iframe*/
+  .modal-full .window-inline .modal-header{position:relative;}
+  .modal-full .window-image,.modal-full .window-image .modal-dialog,.modal-full .window-image .modal-content,.modal-full .window-image .modal-body{height:auto;}
+  /* Modal con nav || Modal with nav */
+  .modal-nav {padding:0px !important;margin:0px auto;}
+  .modal-nav .modal-dialog{margin:0px auto;}
+/*ajuste en los dispositivos moviles y touch */
+.modal-body{-webkit-overflow-scrolling:touch;overflow-y:auto;}
+
+/* ------------------------------------------------------------------------------------------------
+ * 2.4) Ekiline Extend B4 Grid de tarjetas
+ * ----------------------------------------------------------------------------------------------*/
+
+/* Utilidades para grid de listados */
+.col-divider{width: 100%;padding-top: 1px;}
+.card-columns{-webkit-column-count: 4;-moz-column-count: 4;column-count: 4;}
+  /*En caso de habilitar sidebars 2 o 1*/
+  .col-md-6.order-md-2 .card-columns{-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}
+  .col-md-9 .card-columns{-webkit-column-count: 3;-moz-column-count: 3;column-count: 3;}
+  /*En caso de habilitar fullwith*/
+  .container-fluid .card-columns{-webkit-column-count: 6;-moz-column-count: 6;column-count: 6;}
+    /*En caso de habilitar sidebars 2 o 1 con fullwidth*/
+    .container-fluid .col-md-6.order-md-2 .card-columns{-webkit-column-count: 3;-moz-column-count: 3;column-count: 3;}
+    .container-fluid .col-md-9 .card-columns{-webkit-column-count: 4;-moz-column-count: 4;column-count: 4;}
+
+/* ------------------------------------------------------------------------------------------------
+ * 2.5) CSS RESPONSIVO: MĂ©todo Escritorio a movil ||Â Desktop First Method
+ * 2.5.1) PRIMER CAMBIO: Bootstrap container 1200/992 ( Monitores )
+ * ----------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width : 1200px) {
+ /* Contenedor */
+ .cover-container{width: 100%;}
+  /* Contenedor con comportamiento liquido,  */
+  .container { max-width: 100%;}
+  .container > .hentry .alignwide{margin-left: calc( -100vw / 2 + 100% / 2 - 8px);margin-right: calc( -100vw / 2 + 100% / 2 - 8px);width: 100vw;}
+
+ /*Utilidades para grid de listados*/
+ .card-columns{-webkit-column-count: 3;-moz-column-count: 3;column-count: 3;}
+  /*En caso de habilitar sidebars 2 o 1*/
+  .col-md-6.order-md-2 .card-columns, .col-md-9 .card-columns{-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}
+  /*En caso de habilitar fullwith*/
+  .container-fluid .card-columns{-webkit-column-count: 4;-moz-column-count: 4;column-count: 4;}
+    /*En caso de habilitar sidebars 2 o 1 con fullwidth*/
+    .container-fluid .col-md-6.order-md-2 .card-columns{-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}
+    .container-fluid .col-md-9 .card-columns{-webkit-column-count: 3;-moz-column-count: 3;column-count: 3;}
+}
+@media only screen and (max-width : 992px) {
+/* Navbar ajustes */
+ .navbar-nav .show .dropdown-menu > li > a{white-space: normal;}
+}
+
+/* ------------------------------------------------------------------------------------------------
+ * 2.5.2) SEGUNDO CAMBIO: Bootstrap container 768/480 ( tablet/smarphone-hor )
+ * ----------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width : 768px) {
+
+/*Flecha dropdown*/
+.navbar-collapse a.dropdown-toggle-split,
+.navbar-collapse.show a.dropdown-toggle-split{position: absolute;right: 0;top: 0px;width: 40px;z-index: 100;text-align: center;}
+
+/*Menu off-canvas-nav (solo responsivo)*/
+.navbar-collapse.off-canvas-nav{position:fixed;z-index:1100;top:0;bottom:0;left:100%;width:100%;padding:1rem;overflow-y:auto;visibility:hidden;transition-timing-function:ease-in-out;transition-duration:.2s;transition-property:left,visibility;}
+.navbar-collapse.off-canvas-nav .navbar-toggler{margin-left: calc(100% - 50px);display: block;}
+.navbar-collapse.off-canvas-nav.collapsing{height:auto;}
+.navbar-collapse.off-canvas-nav.show{left:0;visibility:visible;}
+  .fixed-bottom .navbar-collapse.off-canvas-nav{top:0;bottom:0;}
+ /* off-canvas-nav + Sticky navbar */
+ .navbar-sticky .navbar-collapse.off-canvas-nav.show{min-height: 100vh;}
+
+/* Scroller nav */
+ .nav-scroller {line-height: 2;width: 100%;}
+ .nav-scroller .nav {-ms-flex-wrap: nowrap;flex-wrap: nowrap;overflow-x: auto;white-space: nowrap;-webkit-overflow-scrolling: touch;}
+ .nav-scroller .nav-link:not(.dropdown-toggle-split) {padding: .5rem;padding-right: 2rem;}
+
+/* Carrusel extendido || Carousel extended */
+ .carousel-multiple .carousel-item > *:nth-child(n+2){display:none;}
+ .carousel-multiple .carousel-inner .carousel-item-next.carousel-item-start >*, .carousel-multiple .carousel-inner .carousel-item-prev.carousel-item-end >*{opacity:1;}
+ .carousel-multiple.x2 .carousel-inner .active.carousel-item-start,.carousel-multiple.x3 .carousel-inner .active.carousel-item-start,.carousel-multiple.x4 .carousel-inner .active.carousel-item-start,.carousel-multiple.x6 .carousel-inner .active.carousel-item-start{-webkit-transform:translate3d(-100%,0,0);-moz-transform:translate3d(-100%,0,0);-ms-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0);}
+ .carousel-multiple.x2 .carousel-inner .active.carousel-item-end,.carousel-multiple.x3 .carousel-inner .active.carousel-item-end,.carousel-multiple.x4 .carousel-inner .active.carousel-item-end,.carousel-multiple.x6 .carousel-inner .active.carousel-item-end{-webkit-transform:translate3d(100%,0,0);-moz-transform:translate3d(100%,0,0);-ms-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0);}
+ .col-sm-1a5,.col-xs-1a5,.col-sm-1a7,.col-xs-1a7,.col-sm-1a8,.col-xs-1a8,.col-sm-1a9,.col-xs-1a9{width:100%;width:100%;}
+
+ /*full modal especĂ­ficos,image,iframe*/
+ .modal-full .window-image .modal-body img,.modal-full .window-image .modal-body img.img-fluid{max-width:inherit;}
+ .modal-full .window-image,.modal-full .window-image .modal-dialog,.modal-full .window-image .modal-content,.modal-full .window-image .modal-body{height:100%;}
+
+ /*Utilidades para grid de listados*/
+ .card-columns{-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}
+   /*En caso de habilitar fullwith*/
+   .container-fluid .card-columns{-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}
+    /*En caso de habilitar sidebars 2 o 1 con fullwidth*/
+    .container-fluid .col-md-6.order-md-2 .card-columns,.container-fluid .col-md-9 .card-columns{-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}
+
+}
+
+/* ------------------------------------------------------------------------------------------------
+ * 2.5.3) TERCER CAMBIO: Bootstrap col-sm 576 ( tablet-ver/smarphone-hor )
+ * ----------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 576px) {
+/* Contenedor principal */
+   .container > .hentry .alignwide {
+     margin-left: -15px;
+     margin-right: -15px;
+     width: auto;
+   }
+/*Utilidades para grid de listados*/
+.card-columns{-webkit-column-count: 1;-moz-column-count: 1;column-count: 1;}
+  /*En caso de habilitar sidebars 2 o 1*/
+  .col-md-6.order-md-2 .card-columns, .col-md-9 .card-columns{-webkit-column-count: 1;-moz-column-count: 1;column-count: 1;}
+  /*En caso de habilitar fullwith*/
+  .container-fluid .card-columns{-webkit-column-count: 1;-moz-column-count: 1;column-count: 1;}
+    /*En caso de habilitar sidebars 2 o 1 con fullwidth*/
+    .container-fluid .col-md-6.order-md-2 .card-columns,.container-fluid .col-md-9 .card-columns{-webkit-column-count: 1;-moz-column-count: 1;column-count: 1;}
+}
